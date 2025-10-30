@@ -44,19 +44,21 @@
         .border-brand-light {
            border-color: #F0EAE0;
         }
+        
         /* Animação do Spinner */
         .spinner {
             border: 4px solid rgba(0, 0, 0, 0.1);
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            border-left-color: #B9975B;
+            border-left-color: #B9975B; /* Cor base */
             animation: spin 1s ease infinite;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
         /* Estilo para o resultado do Gemini para preservar a formatação */
         .gemini-response {
             white-space: pre-wrap;
@@ -68,14 +70,23 @@
             height: 180px; /* Altura fixa para o banner */
             object-fit: cover; /* Garante que a imagem cubra a área sem distorcer, cortando se necessário */
             object-position: center; /* Centraliza a imagem no banner */
+            display: block;
+            background-color: #FBF9F4; /* Cor de fundo do placeholder */
         }
     </style>
 </head>
-<body class="font-body">
+<!-- Aplicamos as cores de fundo do body -->
+<body class="font-body bg-[#FBF9F4]">
 
-    <div class="mobile-app-container">
-        <!-- Cabeçalho com o nome da marca --><header class="text-center">
-            <img src="https://placehold.co/450x180/FBF9F4/B9975B?text=KG+Beauty+Banner" alt="KG Beauty" class="logo-banner">
+    <!-- Cores de fundo do container -->
+    <div class="mobile-app-container bg-white">
+        <!-- Cabeçalho com o nome da marca -->
+        <header class="text-center relative">
+            <!-- IMPORTANTE: Certifique-se que o seu ficheiro de imagem se chama '1000199889.jpg' e está na mesma pasta -->
+            <!-- Placeholder caso a imagem não carregue -->
+            <img src="1000199889.jpg" 
+                 onerror="this.src='https://placehold.co/450x180/FBF9F4/B9975B?text=KG+Beauty+Banner'; this.onerror=null;" 
+                 alt="KG Beauty" class="logo-banner" width="450" height="180">
         </header>
 
         <!-- Conteúdo principal com o menu de procedimentos --><main id="menu-container" class="px-6 pb-28">
@@ -117,6 +128,55 @@
                             Técnica moderna que alinha e modela os fios, proporcionando um efeito de sobrancelhas mais cheias e definidas. Durabilidade de até 60 dias.
                         </p>
                         <button class="generate-aftercare-btn text-xs text-brand-gold font-semibold py-1 px-2 rounded-md border border-brand-gold hover:bg-brand-gold hover:text-white transition-colors" data-procedure="BROW LAMINATION">✨ Dicas de Cuidado</button>
+                    </div>
+                    
+                    <!-- Novos itens inseridos -->
+                    <div class="procedure-item">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="flex items-center gap-2">
+                                <h2 class="text-xl font-semibold text-gray-800">DESIGN DE SOBRANCELHAS</h2>
+                                <button class="generate-explanation-btn text-brand-gold hover:text-yellow-700" data-procedure="DESIGN DE SOBRANCELHAS" title="O que é isso?">
+                                    <i data-feather="help-circle" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                            <p class="text-xl font-bold text-brand-gold whitespace-nowrap ml-4">R$35</p>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            Projeto personalizado com as medidas do seu rosto, mantendo a naturalidade, valorizando seu olhar de forma harmônica e elegante sem afinar.
+                        </p>
+                        <button class="generate-aftercare-btn text-xs text-brand-gold font-semibold py-1 px-2 rounded-md border border-brand-gold hover:bg-brand-gold hover:text-white transition-colors" data-procedure="DESIGN DE SOBRANCELHAS">✨ Dicas de Cuidado</button>
+                    </div>
+
+                    <div class="procedure-item">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="flex items-center gap-2">
+                                <h2 class="text-xl font-semibold text-gray-800">DESIGN COM TINTURA</h2>
+                                <button class="generate-explanation-btn text-brand-gold hover:text-yellow-700" data-procedure="DESIGN COM TINTURA" title="O que é isso?">
+                                    <i data-feather="help-circle" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                            <p class="text-xl font-bold text-brand-gold whitespace-nowrap ml-4">R$50</p>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            Ideal para cobertura de fios grisalhos, loiros e mesmo os escuros. Com uma tintura específica para a região, intensifica a cor natural e adiciona mais brilho e volume. Durabilidade de 20 a 30 dias.
+                        </p>
+                        <button class="generate-aftercare-btn text-xs text-brand-gold font-semibold py-1 px-2 rounded-md border border-brand-gold hover:bg-brand-gold hover:text-white transition-colors" data-procedure="DESIGN COM TINTURA">✨ Dicas de Cuidado</button>
+                    </div>
+
+                    <div class="procedure-item">
+                        <div class="flex justify-between items-start mb-1">
+                            <div class="flex items-center gap-2">
+                                <h2 class="text-xl font-semibold text-gray-800">DESIGN COM HENNA</h2>
+                                <button class="generate-explanation-btn text-brand-gold hover:text-yellow-700" data-procedure="DESIGN COM HENNA" title="O que é isso?">
+                                    <i data-feather="help-circle" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                            <p class="text-xl font-bold text-brand-gold whitespace-nowrap ml-4">R$45</p>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Ideal para quem possui falhas, a henna pigmenta além dos pelos, a pele, proporcionando um efeito de sombra nas sobrancelhas de intensidade personalizável. Durabilidade de 3 a 10 dias.
+                        </p>
+                        <button class="generate-aftercare-btn text-xs text-brand-gold font-semibold py-1 px-2 rounded-md border border-brand-gold hover:bg-brand-gold hover:text-white transition-colors" data-procedure="DESIGN COM HENNA">✨ Dicas de Cuidado</button>
                     </div>
                     
                     <div class="procedure-item">
@@ -165,6 +225,22 @@
         <span class="text-lg">✨</span>
         <span>Me Ajude a Escolher</span>
     </button>
+    
+    <!-- Botão Flutuante para WhatsApp (canto inferior esquerdo) -->
+    <!-- Ajustado para bottom-20 e removido o texto, padding ajustado -->
+    <a id="whatsappLink"
+       href="https://wa.me/5541991984640?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20procedimento%20na%20KG%20Beauty."
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Contato via WhatsApp"
+       class="fixed bottom-20 left-6 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105 flex items-center justify-center">
+        <!-- Ícone simples do WhatsApp (SVG) - Tamanho ajustado -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.52 3.48A11.88 11.88 0 0012 .5C6.21.5 1.7 4.99 1.7 10.79c0 1.89.5 3.66 1.45 5.24L.5 23.5l7.8-2.03a11.84 11.84 0 005.7 1.44c5.79 0 10.3-4.49 10.3-10.29 0-2.75-1.07-5.33-3.28-7.14z" fill="currentColor"/>
+            <path d="M17.28 14.34c-.33-.16-1.95-.97-2.25-1.08-.3-.11-.52-.16-.74.16s-.85 1.08-1.05 1.3c-.19.22-.39.25-.72.08-.33-.16-1.4-.52-2.67-1.64-.99-.88-1.66-1.97-1.85-2.29-.19-.33-.02-.51.14-.67.14-.14.33-.36.5-.55.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.74-1.78-1.01-2.44-.27-.64-.55-.55-.74-.56l-.63-.01c-.2 0-.52.08-.79.37-.27.29-1.04 1.01-1.04 2.46 0 1.45 1.06 2.85 1.21 3.05.14.19 2.09 3.2 5.06 4.49 3.02 1.31 3.02.87 3.57.82.55-.05 1.95-.79 2.23-1.55.27-.77.27-1.43.19-1.57-.08-.15-.29-.25-.62-.41z" fill="#ffffff"/>
+        </svg>
+    </a>
+
 
     <!-- Modal do Assistente de Beleza --><div id="aiAdvisorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
         <div class="bg-white rounded-lg shadow-2xl w-full max-w-md m-auto relative flex flex-col max-h-[90vh]">
@@ -187,7 +263,7 @@
     <!-- Modal para Dicas de Cuidado --><div id="aftercareModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
         <div class="bg-white rounded-lg shadow-2xl w-full max-w-md m-auto relative flex flex-col max-h-[90vh]">
              <button class="absolute top-3 right-3 text-gray-400 hover:text-gray-700" id="closeAftercareModal">
-                <i data-feather="x-circle"></i>
+                <i data-feather="x"></i>
             </button>
             <h2 id="aftercareTitle" class="font-heading text-2xl text-brand-gold p-6 pb-4">✨ Dicas de Cuidado</h2>
             <!-- Wrapper rolável --><div class="flex-1 overflow-y-auto p-6 pt-0">
@@ -212,7 +288,8 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            feather.replace(); // Inicia os ícones
+            // Inicia os ícones
+            feather.replace(); 
 
             // Elementos dos Modais
             const aiAdvisorButton = document.getElementById('aiAdvisorButton');
@@ -257,11 +334,12 @@
                 
                 const menuText = getMenuAsText();
                 const systemPrompt = "Você é uma especialista em beleza e consultora da KG Beauty. Seu tone é amigável, profissional e encorajador. Analise o desejo da cliente e, com base no menu de procedimentos da KG Beauty fornecido, sugira os melhores serviços ou combos. Explique o porquê da sua recomendação de forma clara. Sempre liste os procedimentos sugeridos e seus preços. Formate sua resposta de forma legível. Não use Markdown.";
-                const userPrompt = `--- MENU DE PROCEDIMENTOS KG BEAUTY ---\n${menuText}\n--- FIM DO MENU ---\n\nCom base no menu acima, ajude esta cliente.\n\nDesejo da cliente: "${userQuery}"\n\nSua recomendação:`;
+                const userPrompt = `--- MENU DE PROCEDIMENTOS KG BEAUTY ---\n${menuText}\n--- FIM DO MENU ---\n\nCom base no menu acima, ajude esta cliente.\n\nDesejo da cliente: "${userQuery}"\n\Sua recomendação:`;
 
                 try {
                     const resultText = await generateContent(userPrompt, systemPrompt);
-                    advisorResult.innerHTML = `<div class="gemini-response p-3 bg-gray-50 rounded-lg border border-gray-200">${resultText}</div>`;
+                    // Classes de dark mode removidas
+                    advisorResult.innerHTML = `<div class="gemini-response p-3 bg-gray-50 border border-gray-200 rounded-lg">${resultText}</div>`;
                 } catch (error) {
                     console.error("Error calling Gemini API:", error);
                     advisorResult.innerHTML = `<p class="text-red-500 text-sm">Desculpe, não foi possível obter uma recomendação no momento. Tente novamente mais tarde.</p>`;
@@ -353,7 +431,8 @@
 
             // Função principal para chamar a API Gemini
             async function generateContent(userQuery, systemPrompt = null) {
-                const apiKey = "AIzaSyClwv4goMd2zgNoiyftF5UA1IBWnsPILQs"; // API Key é gerenciada pelo ambiente de execução
+                // API Key é gerida pelo ambiente de execução
+                const apiKey = "AIzaSyClwv4goMd2zgNoiyftF5UA1IBWnsPILQs"; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
                 const payload = {
@@ -397,6 +476,15 @@
                             // Outro tipo de erro, não tentar novamente
                             const errorBody = await response.text();
                             console.error("Erro na API:", response.status, errorBody);
+                            
+                            // Mensagem de erro específica para chave de API inválida
+                            if (response.status === 400) {
+                                const errorHtml = `<p class="text-red-500 text-sm">Parece que a Chave de API é inválida ou está em falta. Por favor, verifique a chave no código.</p>`;
+                                if (advisorResult.innerHTML.includes('spinner')) advisorResult.innerHTML = errorHtml;
+                                if (aftercareResult.innerHTML.includes('spinner')) aftercareResult.innerHTML = errorHtml;
+                                if (explanationResult.innerHTML.includes('spinner')) explanationResult.innerHTML = errorHtml;
+                            }
+                            
                             throw new Error(`Erro na API com status: ${response.status}`);
                         }
                     } catch (error) {
@@ -415,3 +503,4 @@
     </script>
 </body>
 </html>
+
